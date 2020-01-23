@@ -1,0 +1,23 @@
+{
+  "loc.friendlyName": "Create Azure Blueprint",
+  "loc.helpMarkDown": "[Learn more about this task](https://aka.ms/azure-blueprints-ext/wiki)",
+  "loc.description": "Create Azure Blueprint",
+  "loc.instanceNameFormat": "Create Azure Blueprint",
+  "loc.releaseNotes": "Works with cross-platform agents (Linux, macOS, or Windows)",
+  "loc.input.label.ConnectedServiceName": "Azure subscription",
+  "loc.input.help.ConnectedServiceName": "Select the Azure subscription where to deploy the Blueprint. This can be an Azure Management Group or Subscription.",
+  "loc.input.label.BlueprintName": "Blueprint Name"
+  "loc.input.help.BlueprintName": "Blueprint name."
+  "loc.input.label.BlueprintPath": "Blueprint Directory"
+  "loc.input.help.BlueprintPath": "Provide the path to a directory with a blueprint.json file and a directory named artifacts."
+  "loc.input.label.AlternateLocation": "Create Blueprint at child subscription (requires Management Group scope)"
+  "loc.input.help.AlternateLocation": "By default, Blueprints are created at the Management Group or subscription associated with the Azure Pipeline service connection. Select this option to provide an alternate subscription."
+  "loc.input.label.AlternateSubscription": "Subscription Id"
+  "loc.input.help.AlternateSubscription": "Subscription at which the Blueprint is created."
+  "loc.input.label.PublishBlueprint": "Publish Blueprint"
+  "loc.input.help.PublishBlueprint": "Select to publish the Blueprint."
+  "loc.input.label.Version": "Blueprint version"
+  "loc.input.help.Version": "Pprovide the Blueprint version. A value of 'Increment' will increment the version number if the version is an integer."
+  "loc.messages.CreatingBlueprint": "Creating Blueprint",
+  "loc.messages.PublishingBlueprint": "Publishing Blueprint"
+}
