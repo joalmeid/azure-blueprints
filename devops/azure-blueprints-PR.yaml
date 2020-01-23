@@ -2,8 +2,14 @@
 # Azure Blueprints extension for Azure Devops (PR)
 ###################################################
 
-trigger: none
-
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - devops/*
+    
 stages:
 - stage: PRValidation
   displayName: Pull Request Validation
