@@ -1,0 +1,102 @@
+{
+  "manifestVersion": 1,
+  "id": "azure-blueprints",
+  "name": "Azure Blueprints extension for Azure DevOps",
+  "version": "0.0.1",
+  "scopes": [],
+  "description": "Azure DevOps Extension for Azure Blueprints related tasks.",
+  "publisher": "joalmeid",
+  "galleryFlags": [
+      "Preview"
+  ],
+  "files": [
+      {
+        "path": "create-blueprint-task"
+      },
+      {
+        "path": "assign-blueprint-task"
+      },
+      {
+        "path": "static/images",
+        "addressable": true
+      }
+  ],
+  "icons": {
+      "default": "static/images/azure-blueprint-icon.png"
+  },
+  "targets": [
+      {
+          "id": "Microsoft.VisualStudio.Services"
+      }
+  ],
+  "demands": [
+      "api-version/3.0"
+  ],
+  "tags": [
+      "Azure Blueprints",
+      "Azure Governance",
+      "Pipelines",
+      "ci",
+      "cd",
+      "continuous integration",
+      "continuous deployment"
+  ],
+  "categories": [
+      "Azure Pipelines"
+  ],
+  "screenshots": [
+      {
+          "path": "static/images/azure-bluprint-displayImage.png"
+      },
+      {
+          "path": "static/images/azure-bluprint-173-icon.png"
+      }
+  ],
+  "content": {
+      "license": {
+          "path": "license.md"
+      },
+      "details": {
+          "path": "overview.md"
+      }
+  },
+  "links": {
+      "getstarted": {
+          "uri": "https://github.com/joalmeid/azure-blueprints/"
+      },
+      "support": {
+          "uri": "https://github.com/joalmeid/azure-blueprints/"
+      },
+      "issues": {
+          "uri": "https://github.com/joalmeid/azure-blueprints/issues"
+      },
+      "repository": {
+          "uri": "https://github.com/joalmeid/azure-blueprints"
+      },
+      "learn": {
+          "uri": "https://github.com/joalmeid/azure-blueprints/"
+      }
+  },
+  "branding": {
+      "color": "rgb(255, 217, 0)",
+      "theme": "light"
+  },
+  "contributions": [
+    {
+        "id": "create-blueprint-task",
+        "targets": [ "ms.vss-distributed-task.tasks" ],
+        "type": "ms.vss-distributed-task.task",
+        "properties": {
+            "name": "create-blueprint-task"
+        }
+    },
+    {
+      "id": "create-blueprint-task",
+      "targets": [ "ms.vss-distributed-task.tasks" ],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+          "name": "create-blueprint-task"
+      }
+    }
+  ]
+}

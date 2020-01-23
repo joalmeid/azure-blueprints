@@ -1,0 +1,42 @@
+{
+  "name": "azure-blueprints",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Azure Blueprints extension for Azure DevOps",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf ./*.vsix",
+    "prebuild": "cd create-blueprint-task\\AzureBlueprintCreateV1 && npm install --save-dev",
+    "build": "tsc --listEmittedFiles -p . ",
+    "test": "cd assign-blueprint-task\\AssignBlueprintV1 && mocha tests/_suite.js",
+    "compile": "npm run clean && npm run build",
+    "package": "npm run build && tfx extension create --rev-version --manifest-globs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dev.azure.com/joalmeid/azsearch-extensions/_git/azsearch-extensions"
+  },
+  "keywords": [
+    "Azure Blueprints",
+    "Azure Devops",
+    "DevOps",
+    "Blueprints",
+    "Governance",
+    "extensions"
+  ],
+  "author": "joalmeid@microsoft.com",
+  "license": "MIT",
+  "dependencies": {
+    "azure-pipelines-task-lib": "2.8.0"
+  },
+  "bugs": {
+    "url": "https://github.com/joalmeid/azure-blueprints/issues"
+  },
+  "homepage": "https://github.com/joalmeid/azure-blueprints",
+  "devDependencies": {
+    "tfx-cli": "^0.6.4",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.10.4",
+    "@types/q": "^1.5.1"
+  }
+}
