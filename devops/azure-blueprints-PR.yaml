@@ -17,8 +17,7 @@ stages:
 
   - job: PRBuild
     displayName: Build
-    pool: 
-      vmImage: 'ubuntu-latest'
+    pool: JDA
     steps:
     - task: Npm@1
       displayName: 'npm install'
