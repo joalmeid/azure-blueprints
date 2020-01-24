@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf ./*.vsix",
     "prebuild": "cd create-blueprint-task/AzureBlueprintCreateV1 && npm install --save-dev",
-    "build": "tsc --listEmittedFiles -p . ",
+    "build": "echo $PWD && tsc --listEmittedFiles -p . ",
     "test": "cd assign-blueprint-task/AssignBlueprintV1 && mocha tests/_suite.js",
     "compile": "npm run clean && npm run build",
     "package": "npm run build && tfx extension create --rev-version --manifest-globs"

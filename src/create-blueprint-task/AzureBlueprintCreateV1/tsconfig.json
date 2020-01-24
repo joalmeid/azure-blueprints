@@ -1,7 +1,11 @@
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
-        "types": ["node"]
-    }
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "types": ["node"],
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false
+  }
 }
