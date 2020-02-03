@@ -89,7 +89,35 @@
         }
     },
     "messages": {
-        "CreatingBlueprint": "Creating Blueprint",
-        "PublishingBlueprint": "Publishing Blueprint"
+      "ParsedTaskInputsLabel": "Parsed task inputs:",
+      "InputsconnectedServiceNameLabel": "ConnectedServiceName: %s.",
+      "InputsSubscriptionIdLabel": "SubscriptionId: %s.",
+      "InputTenantIdLabel": "TenantId: %s.",
+      "InputClientIdLabel": "ClientId: %s.",
+      "InputClientSecretLabel": "ClientSecret: %s.",
+      "InputSchemeLabel": "Scheme: %s.",
+      "InputServiceConnectionScopeLabel": "ServiceConnectionScope: %s.",
+      "InputManagementGroupIdLabel": "ManagementGroupId: %s.",
+      "InputAltSubscriptionLabel": "AltSubscription: %s.",
+      "InputAltSubscriptionIdLabel": "AltSubscriptionId: %s.",
+      "InputBlueprintNameLabel": "BlueprintName: %s.",
+      "InputBlueprintPathLabel": "BlueprintPath: %s.",
+      "InputBlueprintPublishLabel": "BlueprintPublish: %b.",
+      "InputBlueprintVersionLabel": "BlueprintVersion: %s.",
+      "AzureRESTRequestError": "Error calling Azure REST API. Error: %s.",
+      "AzureBlueprintNotFound": "Azure Blueprint not found.",
+      "AzureBlueprintFound": "Found Azure Blueprint:\n\tid: %s\n\tname:%s\n\ttype:%s`",
+      "AzureBlueprintFailedDelete": "Failed to delete existing Blueprint.",
+      "AzureBlueprintDeleted": "Existing blueprint deleted:\n\tid: %s",
+      "AzureBlueprintNotCreated": "Azure Blueprint not created.",
+      "AzureBlueprintCreated": "Azure Blueprint created...\n\tid: %s\n\tname: %s\n\ttype: %s",
+      "AzureBlueprintArtifactNotCreated": "Failed to create blueprint artifact: %s",
+      "AzureBlueprintArtifactCreated": "Created blueprint artifact: %s",
+      "BlueprintNotValid": "Blueprint path not valid: %s",
+      "BlueprintArtifactNotValid": "Unable to validate Artifact Blueprint path: %s",
+      "AzureRESTAuthenticationError": "Error login in to Azure. Please check the Service Configuration. Error: %s.",
+      
+      "CreatingBlueprint": "Creating Blueprint",
+      "PublishingBlueprint": "Publishing Blueprint"
     }
 }
