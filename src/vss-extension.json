@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azure-blueprints",
   "name": "Azure Blueprints extension for Azure DevOps",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "scopes": [],
   "description": "Azure DevOps Extension for Azure Blueprints related tasks.",
   "publisher": "joalmeid",
@@ -43,10 +43,10 @@
   ],
   "screenshots": [
       {
-          "path": "static/images/azure-bluprint-displayImage.png"
+          "path": "static/images/azure-blueprint-displayImage.png"
       },
       {
-          "path": "static/images/azure-bluprint-173-icon.png"
+          "path": "static/images/azure-blueprint-173-icon.png"
       }
   ],
   "content": {
@@ -86,14 +86,6 @@
         "properties": {
             "name": "create-blueprint-task"
         }
-    },
-    {
-      "id": "create-blueprint-task",
-      "targets": [ "ms.vss-distributed-task.tasks" ],
-      "type": "ms.vss-distributed-task.task",
-      "properties": {
-          "name": "create-blueprint-task"
-      }
     }
   ]
 }

@@ -5,16 +5,10 @@ The Azure Blueprints extension for Azure DevOps include the following contributi
 - Create Azure Blueprint Task
 - Assign Azure Blueprint Task
 
-        {
-            "path": "static/images/azure-bluprint-displayImage.png"
-        },
-        {
-            "path": "static/images/azure-bluprint-173-icon.png"
+![Azure Blueprints](static/images/azure-blueprint-displayImage.png "Azure Blueprints")
 
-![Azure Blueprints](static/images/azure-bluprint-displayImage.png "Azure Blueprints")
-
-![Create Azure Blueprint Task](/static/images/azure-bluprint-create-task-displayImage.png "Create Azure Blueprint Task")
-![Assign Azure Blueprint Task](/static/images/azure-bluprint-assign-task-displayImage.png "Assign Azure Blueprint Task")
+![Create Azure Blueprint Task](/static/images/azure-blueprint-create-task-displayImage.png "Create Azure Blueprint Task")
+![Assign Azure Blueprint Task](/static/images/azure-blueprint-assign-task-displayImage.png "Assign Azure Blueprint Task")
 
 ### Quick steps to get started ###
 
