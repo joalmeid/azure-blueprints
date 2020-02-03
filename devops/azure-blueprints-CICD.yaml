@@ -16,6 +16,7 @@ variables:
   projName: azure-blueprints
   artifactName: $(projName)-extension
   publisherId: joalmeid
+  vsMarketplaceServiceConnetion: azure-blueprints-mktp
   # pat: #required
 
 stages:
@@ -107,13 +108,13 @@ stages:
     - task: ms-devlabs.vsts-developer-tools-build-tasks.extension-version-build-task.ExtensionVersion@1
       displayName: 'Query Extension Version'
       inputs:
-        connectedServiceName: 'VS Marketplace'
+        connectedServiceName: '$(vsMarketplaceServiceConnetion)'
         publisherId: $(publisherId)
         extensionId: $(projName)
     - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
       displayName: 'Publish Extension'
       inputs:
-        connectedServiceName: 'VS Marketplace'
+        connectedServiceName: '$(vsMarketplaceServiceConnetion)'
         fileType: vsix
         vsixFile: '$(Pipeline.Workspace)/$(artifactName)/$(publisherId).$(projName)-*.vsix'
         publisherId: $(publisherId)
@@ -125,7 +126,7 @@ stages:
     - task: ms-devlabs.vsts-developer-tools-build-tasks.share-extension-build-task.ShareExtension@1
       displayName: 'Share Extension'
       inputs:
-        connectedServiceName: 'VS Marketplace'
+        connectedServiceName: '$(vsMarketplaceServiceConnetion)'
         method: vsix
         vsixFile: '$(Pipeline.Workspace)/$(artifactName)/$(publisherId).$(projName)-*.vsix'
         accounts: $(publisherId)
