@@ -84,16 +84,16 @@ export class BlueprintController {
 
         let request = await azureClient.sendRequest(options, (err, result: Blueprint, request, response) => {
             if (err) {
-              console.error(tl.loc("AzureRESTRequestError", err.message));
+              tl.error(tl.loc("AzureRESTRequestError", err.message));
               reject(tl.loc("AzureRESTRequestError", err.message));
             } else if (response.statusCode==404) {
-              console.debug(tl.loc("AzureBlueprintNotFound"));
+              tl.debug(tl.loc("AzureBlueprintNotFound"));
               resolve();
             } else if (response.statusCode!==200) {
-              console.debug(tl.loc("AzureBlueprintNotFound"));
+              tl.debug(tl.loc("AzureBlueprintNotFound"));
               resolve(null);
             } else {
-              console.debug(tl.loc("AzureBlueprintFound", result.id, result.name, result.type));
+              tl.debug(tl.loc("AzureBlueprintFound", result.id, result.name, result.type));
               resolve (result);
             }
         });
@@ -114,13 +114,13 @@ export class BlueprintController {
   
       let request = await azureClient.sendRequest(options, (err, result, request, response) => {
         if (err) {
-          console.error(tl.loc("AzureRESTRequestError", err.message));
+          tl.error(tl.loc("AzureRESTRequestError", err.message));
           reject(tl.loc("AzureRESTRequestError", err.message));
         } else if (response.statusCode!==200) {
-          console.debug(tl.loc("AzureBlueprintFailedDelete"));
+          tl.debug(tl.loc("AzureBlueprintFailedDelete"));
           reject(tl.loc("AzureBlueprintFailedDelete"));
         } else {
-          console.debug(tl.loc("AzureBlueprintDeleted", curBlueprint.id));
+          tl.debug(tl.loc("AzureBlueprintDeleted", curBlueprint.id));
           resolve(true);
         }
       });
@@ -148,13 +148,13 @@ export class BlueprintController {
   
         let request = await azureClient.sendRequest(options, (err, result: Blueprint, request, response) => {
           if (err) {
-            console.error(tl.loc("AzureRESTRequestError", err.message));
+            tl.error(tl.loc("AzureRESTRequestError", err.message));
             reject(tl.loc("AzureRESTRequestError", err.message));
           } else if (response.statusCode!==201) {
-            console.debug(tl.loc("AzureBlueprintNotCreated"));
+            tl.debug(tl.loc("AzureBlueprintNotCreated"));
             reject(tl.loc("AzureBlueprintNotCreated"));
           } else {
-            console.debug(tl.loc("AzureBlueprintCreated", result.id, result.name, result.type));
+            console.log(tl.loc("AzureBlueprintCreated", result.id, result.name, result.type));
             resolve(result);
           }
         });
@@ -198,13 +198,13 @@ export class BlueprintController {
   
       let request = await azureClient.sendRequest(options, (err, result: Artifact, request, response) => {
         if (err) {
-          console.error(tl.loc("AzureRESTRequestError", err.message));
+          tl.error(tl.loc("AzureRESTRequestError", err.message));
           reject(tl.loc("AzureRESTRequestError", err.message));
       } else if (response.statusCode!==201) {
-          console.debug(tl.loc("AzureBlueprintArtifactNotCreated", artifactOption.name));
+          tl.debug(tl.loc("AzureBlueprintArtifactNotCreated", artifactOption.name));
           reject(tl.loc("AzureBlueprintArtifactNotCreated", artifactOption.name));
         } else {
-          console.debug(tl.loc("AzureBlueprintArtifactCreated", artifactOption.name));
+          console.log(tl.loc("AzureBlueprintArtifactCreated", artifactOption.name));
           resolve(result);
         }
       });
@@ -216,7 +216,7 @@ export class BlueprintController {
       let blueprintFileName: string = path.join(blueprintOption.path, 'blueprint.json');
       await fs.access(blueprintFileName, fs.constants.R_OK, (error) => {
         if (error) {
-          console.debug(tl.loc("BlueprintNotValid", blueprintFileName));
+          tl.debug(tl.loc("BlueprintNotValid", blueprintFileName));
           return reject(error);
         }
         resolve(blueprintFileName);
@@ -230,7 +230,7 @@ export class BlueprintController {
       let artifactsFolderPath: string = path.join(blueprintOption.path, 'artifacts');
       await fs.access(artifactsFolderPath, fs.constants.R_OK, (error) => {
         if (error) {
-          console.debug(tl.loc("BlueprintArtifactNotValid", artifactsFolderPath));
+          tl.debug(tl.loc("BlueprintArtifactNotValid", artifactsFolderPath));
           return reject(error);
         }
         resolve(artifactsFolderPath);
@@ -242,7 +242,7 @@ export class BlueprintController {
     return new Promise<AzureServiceClient>(async (resolve, reject) => {
       await msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, (err, creds) => {
         if (err) {
-          console.debug(tl.loc("AzureRESTAuthenticationError", err.message));
+          tl.debug(tl.loc("AzureRESTAuthenticationError", err.message));
           reject(tl.loc("AzureRESTAuthenticationError", err.message));
         }
         resolve(new AzureServiceClient(creds, {}));
