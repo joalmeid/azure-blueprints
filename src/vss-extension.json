@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azure-blueprints",
   "name": "Azure Blueprints extension for Azure DevOps",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scopes": [],
   "description": "Azure DevOps Extension for Azure Blueprints related tasks.",
   "publisher": "joalmeid",
@@ -59,7 +59,7 @@
   },
   "links": {
       "getstarted": {
-          "uri": "https://github.com/joalmeid/azure-blueprints/"
+          "uri": "https://github.com/joalmeid/azure-blueprints/wiki"
       },
       "support": {
           "uri": "https://github.com/joalmeid/azure-blueprints/"
@@ -71,7 +71,7 @@
           "uri": "https://github.com/joalmeid/azure-blueprints"
       },
       "learn": {
-          "uri": "https://github.com/joalmeid/azure-blueprints/"
+          "uri": "https://github.com/joalmeid/azure-blueprints/wiki"
       }
   },
   "branding": {
