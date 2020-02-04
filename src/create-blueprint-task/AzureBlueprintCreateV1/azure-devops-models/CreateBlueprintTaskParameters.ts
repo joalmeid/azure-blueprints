@@ -42,20 +42,35 @@ export class CreateBlueprintTaskParameters {
       this.blueprintVersion = tl.getInput("Version", true);
 
       //Print input variables values
-      tl.debug(tl.loc("InputsconnectedServiceNameLabel", connectedService));
-      tl.debug(tl.loc("InputsSubscriptionIdLabel", this.subscriptionId));
-      tl.debug(tl.loc("InputTenantIdLabel", this.tenantId));
-      tl.debug(tl.loc("InputClientIdLabel", this.clientId));
-      tl.debug(tl.loc("InputClientSecretLabel", this.clientSecret));
-      tl.debug(tl.loc("InputSchemeLabel", this.scheme));
-      tl.debug(tl.loc("InputServiceConnectionScopeLabel", this.serviceConnectionScope));
-      tl.debug(tl.loc("InputManagementGroupIdLabel", this.managementGroupId));
-      tl.debug(tl.loc("InputAltSubscriptionLabel", this.altSubscription));
-      tl.debug(tl.loc("InputAltSubscriptionIdLabel", this.altSubscriptionId));
-      tl.debug(tl.loc("InputBlueprintNameLabel", this.blueprintName));
-      tl.debug(tl.loc("InputBlueprintPathLabel", this.blueprintPath));
-      tl.debug(tl.loc("InputBlueprintPublishLabel", this.blueprintPublish));
-      tl.debug(tl.loc("InputBlueprintVersionLabel", this.blueprintVersion));
+      console.log(tl.loc("InputsconnectedServiceNameLabel", connectedService));
+      console.log(tl.loc("InputsSubscriptionIdLabel", this.subscriptionId));
+      console.log(tl.loc("InputTenantIdLabel", this.tenantId));
+      console.log(tl.loc("InputClientIdLabel", this.clientId));
+      console.log(tl.loc("InputClientSecretLabel", this.clientSecret));
+      console.log(tl.loc("InputSchemeLabel", this.scheme));
+      console.log(tl.loc("InputServiceConnectionScopeLabel", this.serviceConnectionScope));
+      console.log(tl.loc("InputManagementGroupIdLabel", this.managementGroupId));
+      console.log(tl.loc("InputAltSubscriptionLabel", this.altSubscription));
+      console.log(tl.loc("InputAltSubscriptionIdLabel", this.altSubscriptionId));
+      console.log(tl.loc("InputBlueprintNameLabel", this.blueprintName));
+      console.log(tl.loc("InputBlueprintPathLabel", this.blueprintPath));
+      console.log(tl.loc("InputBlueprintPublishLabel", this.blueprintPublish));
+      console.log(tl.loc("InputBlueprintVersionLabel", this.blueprintVersion));
+
+      // tl.debug(tl.loc("InputsconnectedServiceNameLabel", connectedService));
+      // tl.debug(tl.loc("InputsSubscriptionIdLabel", this.subscriptionId));
+      // tl.debug(tl.loc("InputTenantIdLabel", this.tenantId));
+      // tl.debug(tl.loc("InputClientIdLabel", this.clientId));
+      // tl.debug(tl.loc("InputClientSecretLabel", this.clientSecret));
+      // tl.debug(tl.loc("InputSchemeLabel", this.scheme));
+      // tl.debug(tl.loc("InputServiceConnectionScopeLabel", this.serviceConnectionScope));
+      // tl.debug(tl.loc("InputManagementGroupIdLabel", this.managementGroupId));
+      // tl.debug(tl.loc("InputAltSubscriptionLabel", this.altSubscription));
+      // tl.debug(tl.loc("InputAltSubscriptionIdLabel", this.altSubscriptionId));
+      // tl.debug(tl.loc("InputBlueprintNameLabel", this.blueprintName));
+      // tl.debug(tl.loc("InputBlueprintPathLabel", this.blueprintPath));
+      // tl.debug(tl.loc("InputBlueprintPublishLabel", this.blueprintPublish));
+      // tl.debug(tl.loc("InputBlueprintVersionLabel", this.blueprintVersion));
       
       return this;
     }

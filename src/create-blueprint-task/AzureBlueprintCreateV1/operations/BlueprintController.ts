@@ -221,6 +221,7 @@ export class BlueprintController {
         }
         resolve(blueprintFileName);
         //TODO: let newBlueprint = JSON.parse(JSON.stringify(result));
+        //JSON.parse(fs.readFileSync(taskjson).toString());
       });
     });
   }
