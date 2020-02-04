@@ -14,8 +14,8 @@
   "loc.input.help.AlternateLocation": "By default, Blueprints are created at the Management Group or subscription associated with the Azure Pipeline service connection. Select this option to provide an alternate subscription."
   "loc.input.label.AlternateSubscription": "Subscription Id"
   "loc.input.help.AlternateSubscription": "Subscription at which the Blueprint is created."
-  "loc.input.label.PublishBlueprint": "Publish Blueprint"
-  "loc.input.help.PublishBlueprint": "Select to publish the Blueprint."
+  "loc.input.label.BlueprintPublish": "Publish Blueprint"
+  "loc.input.help.BlueprintPublish": "Select to publish the Blueprint."
   "loc.input.label.Version": "Blueprint version"
   "loc.input.help.Version": "Pprovide the Blueprint version. A value of 'Increment' will increment the version number if the version is an integer."
   "loc.messages.CreatingBlueprint": "Creating Blueprint",

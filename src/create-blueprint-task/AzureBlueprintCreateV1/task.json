@@ -64,7 +64,7 @@
           "visibleRule": "AlternateLocation = true"
         },
         {
-          "name": "PublishBlueprint",
+          "name": "BlueprintPublish",
           "type": "boolean",
           "label": "Publish Blueprint",
           "defaultValue": "false",
@@ -78,7 +78,7 @@
           "defaultValue": "Increment",
           "required": false,
           "helpMarkDown": "Blueprint version. A value of 'Increment' will increment the version number if the version is an integer.",
-          "visibleRule": "PublishBlueprint = true"
+          "visibleRule": "BlueprintPublish = true"
         }
     ],
     "dataSourceBindings": [],
