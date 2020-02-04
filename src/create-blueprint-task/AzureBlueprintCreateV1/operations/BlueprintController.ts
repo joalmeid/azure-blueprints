@@ -176,7 +176,7 @@ export class BlueprintController {
 
       try {
         artifactList = [];
-        artifactFiles = await fsPromises.readdir(artifactsPath);
+        artifactFiles = await require('fs').promises.readdir(artifactsPath);
     
         await Promise.all(artifactFiles.map( async (artifactFilePath) => {
           let artifactOption: ArtifactOptions = {
@@ -200,7 +200,7 @@ export class BlueprintController {
   private async ImportBlueprintArtifact(azureClient:AzureServiceClient, blueprintOption: BlueprintsOptions, artifactOption: ArtifactOptions): Promise<Artifact> {
     return new Promise<Artifact>(async (resolve, reject) => {
       try {
-        let curArtifactFile = await fsPromises.readFile(artifactOption.path, 'utf8');
+        let curArtifactFile = await require('fs').promises.readFile(artifactOption.path, 'utf8');
     
         let targetScope = blueprintOption.managementGroupId ? `https://management.azure.com/providers/Microsoft.Management/managementGroups/${blueprintOption.managementGroupId}/providers/Microsoft.Blueprint/blueprints/${blueprintOption.blueprintName}/artifacts/${artifactOption.name}?api-version=${BLUEPRINT_ARMAPI_VERSION}` : 
           `https://management.azure.com/subscriptions/${blueprintOption.subscriptionId}/providers/Microsoft.Blueprint/blueprints/${blueprintOption.blueprintName}/artifacts/${artifactOption.name}?api-version=${BLUEPRINT_ARMAPI_VERSION}`;
