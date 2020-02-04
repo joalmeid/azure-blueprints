@@ -1,7 +1,8 @@
 import * as tl from 'azure-pipelines-task-lib/task';
 import * as path from 'path';
 import * as fs from 'fs';
-const fsPromises = require('fs').promises;
+const fsPromises = require('fs').promises; 
+// const { promisify } = require("util");
 import * as msRestAzure from 'ms-rest-azure';
 import { AzureServiceClient } from 'ms-rest-azure';
 import { UrlBasedRequestPrepareOptions } from 'ms-rest';
@@ -176,8 +177,10 @@ export class BlueprintController {
 
       try {
         artifactList = [];
-        artifactFiles = await require('fs').promises.readdir(artifactsPath);
-    
+        // artifactFiles = await fsPromises.readdir(artifactsPath);
+        // const writeFile = promisify(fs.readdir);
+        artifactFiles = fs.readdirSync(artifactsPath);
+
         await Promise.all(artifactFiles.map( async (artifactFilePath) => {
           let artifactOption: ArtifactOptions = {
             name: artifactFilePath.split("/").pop().substring(0,artifactFilePath.indexOf('.')),
@@ -194,7 +197,8 @@ export class BlueprintController {
   private async ImportBlueprintArtifact(azureClient:AzureServiceClient, blueprintOption: BlueprintsOptions, artifactOption: ArtifactOptions): Promise<Artifact> {
     return new Promise<Artifact>(async (resolve, reject) => {
       try {
-        let curArtifactFile = await require('fs').promises.readFile(artifactOption.path, 'utf8');
+        //let curArtifactFile = await fsPromises.readFile(artifactOption.path, 'utf8');
+        let curArtifactFile = await fs.readFileSync(artifactOption.path, 'utf8');
     
         let targetScope = blueprintOption.managementGroupId ? `https://management.azure.com/providers/Microsoft.Management/managementGroups/${blueprintOption.managementGroupId}/providers/Microsoft.Blueprint/blueprints/${blueprintOption.blueprintName}/artifacts/${artifactOption.name}?api-version=${BLUEPRINT_ARMAPI_VERSION}` : 
           `https://management.azure.com/subscriptions/${blueprintOption.subscriptionId}/providers/Microsoft.Blueprint/blueprints/${blueprintOption.blueprintName}/artifacts/${artifactOption.name}?api-version=${BLUEPRINT_ARMAPI_VERSION}`;
