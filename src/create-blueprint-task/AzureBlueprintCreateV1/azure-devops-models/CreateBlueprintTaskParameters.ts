@@ -34,7 +34,7 @@ export class CreateBlueprintTaskParameters {
       this.serviceConnectionScope = tl.getEndpointDataParameter(connectedService, "scopeLevel", true);
       this.managementGroupId = tl.getEndpointDataParameter(connectedService, "managementGroupId", true);
       this.altSubscription = tl.getInput("AlternateLocation", true);
-      this.altSubscriptionId = tl.getInput("AlternateSubscription", true);
+      this.altSubscriptionId = tl.getInput("AlternateSubscription", false);
 
       this.blueprintName = tl.getInput("BlueprintName", true);
       this.blueprintPath = tl.getInput("BlueprintPath", true);
