@@ -1,7 +1,7 @@
 import * as tl from 'azure-pipelines-task-lib/task';
 import * as path from 'path';
 import * as fs from 'fs';
-const fsPromises = require('fs').promises
+const fsPromises = require('fs').promises;
 import * as msRestAzure from 'ms-rest-azure';
 import { AzureServiceClient } from 'ms-rest-azure';
 import { UrlBasedRequestPrepareOptions } from 'ms-rest';
@@ -187,13 +187,7 @@ export class BlueprintController {
           artifactList.push(bpArtifact);
         }));
         resolve(artifactList);
-      } catch(error) { 
-        console.log(`1: ${fsPromises}`);
-        console.log(`2: ${JSON.stringify(fsPromises)}`);
-        console.log(`3: ${artifactFiles}`);
-        console.log(`4: ${JSON.stringify(artifactFiles)}`);
-        reject(error); 
-      }
+      } catch(error) { reject(error); }
     });
   }
   
