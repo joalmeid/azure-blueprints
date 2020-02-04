@@ -24,15 +24,15 @@ export class CreateBlueprintTaskParameters {
     public blueprintVersion: string;
 
     public async getCreateBlueprintTaskParameters() : Promise<CreateBlueprintTaskParameters> {
-      let connectedService = tl.getInput("ConnectedServiceName", true);
-      this.subscriptionId = tl.getEndpointDataParameter(connectedService, "SubscriptionId", true);
-      this.tenantId = tl.getEndpointAuthorizationParameter(connectedService, 'tenantid', true);
-      this.clientId = tl.getEndpointAuthorizationParameter(connectedService, 'serviceprincipalid', true);
-      this.clientSecret = tl.getEndpointAuthorizationParameter(this.connectedServiceName, 'serviceprincipalkey', true);
-      this.scheme = tl.getEndpointAuthorizationScheme(connectedService, false);
+      this.connectedServiceName = tl.getInput("ConnectedServiceName", true);
+      this.subscriptionId = tl.getEndpointDataParameter(this.connectedServiceName, "SubscriptionId", true);
+      this.tenantId = tl.getEndpointAuthorizationParameter(this.connectedServiceName, 'tenantid', true);
+      this.clientId = tl.getEndpointAuthorizationParameter(this.connectedServiceName, 'serviceprincipalid', false);
+      this.clientSecret = tl.getEndpointAuthorizationParameter(this.connectedServiceName, 'serviceprincipalkey', false);
+      this.scheme = tl.getEndpointAuthorizationScheme(this.connectedServiceName, false);
 
-      this.serviceConnectionScope = tl.getEndpointDataParameter(connectedService, "scopeLevel", true);
-      this.managementGroupId = tl.getEndpointDataParameter(connectedService, "managementGroupId", true);
+      this.serviceConnectionScope = tl.getEndpointDataParameter(this.connectedServiceName, "scopeLevel", true);
+      this.managementGroupId = tl.getEndpointDataParameter(this.connectedServiceName, "managementGroupId", true);
       this.altSubscription = tl.getInput("AlternateLocation", true);
       this.altSubscriptionId = tl.getInput("AlternateSubscription", false);
 
@@ -42,7 +42,7 @@ export class CreateBlueprintTaskParameters {
       this.blueprintVersion = tl.getInput("Version", true);
 
       //Print input variables values
-      console.log(tl.loc("InputsconnectedServiceNameLabel", connectedService));
+      console.log(tl.loc("InputsconnectedServiceNameLabel", this.connectedServiceName));
       console.log(tl.loc("InputsSubscriptionIdLabel", this.subscriptionId));
       console.log(tl.loc("InputTenantIdLabel", this.tenantId));
       console.log(tl.loc("InputClientIdLabel", this.clientId));
