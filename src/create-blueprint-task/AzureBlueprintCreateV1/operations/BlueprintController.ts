@@ -171,10 +171,12 @@ export class BlueprintController {
   
   private async ImportBlueprintArtifacts(azureClient:AzureServiceClient, blueprintOption: BlueprintsOptions, artifactsPath: string): Promise<Artifact[]> {
     return new Promise<Artifact[]>(async (resolve, reject) => {
+      let artifactList: Artifact[] = [];
+      let artifactFiles: string[]
+
       try {
-        let artifactList: Artifact[] = [];
-    
-        let artifactFiles: string[] = await fsPromises.readdir(artifactsPath);
+        artifactList = [];
+        artifactFiles = await fsPromises.readdir(artifactsPath);
     
         await Promise.all(artifactFiles.map( async (artifactFilePath) => {
           let artifactOption: ArtifactOptions = {
@@ -185,7 +187,13 @@ export class BlueprintController {
           artifactList.push(bpArtifact);
         }));
         resolve(artifactList);
-      } catch(error) { reject(error); }
+      } catch(error) { 
+        console.log(`1: ${fsPromises}`);
+        console.log(`2: ${JSON.stringify(fsPromises)}`);
+        console.log(`3: ${artifactFiles}`);
+        console.log(`4: ${JSON.stringify(artifactFiles)}`);
+        reject(error); 
+      }
     });
   }
   
