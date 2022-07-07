@@ -6,7 +6,7 @@
     "@types/q": "^1.5.0",
     "ms-rest-azure": "^3.0.0",
     "azure-pipelines-task-lib": "2.8.0",
-    "moment": "2.21.0",
+    "moment": "2.29.4",
     "vso-node-api": "6.0.1-preview"
   }
 }
